@@ -140,6 +140,9 @@ def next_step():
         elif term == 0:
             print "Abort"
             next_step()
+    else:
+        print 'Wrong Input'
+        next_step()
 
 
 show_paperlist()
