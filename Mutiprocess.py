@@ -23,7 +23,7 @@ else:
 # print st.group(1).title()
 
 # from multiprocessing import Process
-#
+##添加子进程
 # def runc(name):
 #     print 'this is ',name,'-',os.getpid()
 #
@@ -36,7 +36,7 @@ else:
 #     print 'end child process'
 #     print os.getpid()
 
-
+#用Pool模块添加多个子进程
 # def long_time(name):
 #     print 'run task is',name,'-',os.getpid()
 #     start = time.time()
@@ -54,6 +54,7 @@ else:
 #     p.join()
 #     print 'done'
 
+#添加子线程
 def loop(s):
     print 'thread '+threading.current_thread().name+' starts running'
     print s
