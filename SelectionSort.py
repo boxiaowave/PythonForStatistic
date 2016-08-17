@@ -17,8 +17,10 @@ def selectionsort(li):
         sortli.append(li.pop(index))
     return sortli
 
-li = [12,11,10,9,7,4,2,1]
+if __name__=='__main__':
     
-print selectionsort(li)
-print li
+    li = [12,11,10,9,7,4,2,1]
+    
+    print selectionsort(li)
+    print li
         
