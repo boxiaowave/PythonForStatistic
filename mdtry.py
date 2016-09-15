@@ -4,7 +4,7 @@ Created on Sun Sep 11 23:07:37 2016
 
 @author: BoXiao
 """
-
+'''
 class Point(object):
     def __init__(self,x,y):
         self.x=x
@@ -39,6 +39,7 @@ kangra.put_in_touch(roo)
 
 print kangra
 print roo
+'''
 
 """
 
@@ -85,16 +86,59 @@ print roo
 # If you run this program as is, it seems to work.
 # To see the problem, trying printing roo.
         
-from visual import *
+# from visual import *
+#
+# scene.range=(256,256,256)
+# scene.center=(128,128,128)
+#
+# color = (0.1,0.1,0.9)
+#
+# # sphere(pos=scene.center,radius=128,color=color)
+# t = range(0,256,51)
+#
+# for x in t:
+#     for y in t:
+#         for z in t:
+#             pos = x,y,z
+#             color = x/255.0,y/255.0,z/255.0
+#             sphere(pos=pos,radius=10,color=color)
 
-scene.range=(256,256,256)  
-scene.center=(128,128,128)
+'''
+class Card(object):
+    suitnames = ['Clue','Diamond','Hearts','Spades']
+    ranknames = [None,'Ace','1','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
 
-color = (0.1,0.1,0.9)
+    def __init__(self,suit,rank):
+        self.suit = suit
+        self.rank = rank
 
-sphere(pos=scene.center,radius=128,color=color)     
+    def __str__(self):
+        return '%s,%s' %(Card.suitnames[self.suit],Card.ranknames[self.rank])
 
+    def __cmp__(self,other):
+        t1 = self.suit,self.rank
+        t2 = other.suit, other.rank
+        return cmp(t1,t2)
 
+po =Card(1,2)
+po2 = Card(2,1)
 
+print cmp(po,po2)
 
+class deck(object):
+
+'''
+from swampy.Gui import *
+g = Gui()
+g.title('GUI')
+g.mainloop()
+
+g.bu(text="let's try")
+
+# def make_label():
+#     g.la(text='Thank you')
+#
+# button2 = g.bu(text="let's try2",command = make_label)
+
+g.mainloop()
           
