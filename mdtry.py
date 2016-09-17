@@ -131,14 +131,40 @@ class deck(object):
 from swampy.Gui import *
 g = Gui()
 g.title('GUI')
+
+
+
+def make_button():
+     g.bu(text='button1', command=make_label)
+
+def make_label():
+     g.la(text='Well Done!!')
+
+def make_circle():
+    global item
+    item=canvas.circle([0, 0], 100, fill='red')
+
+def change_color():
+    try:
+        item.config(fill=entry.get())
+        text.delete(0.0,END)
+        text.insert(END,'right input')
+    except:
+        text.delete(0.0,END)
+        text.insert(END,'wrong color, please change input and press button again')
+
+
+
+canvas = g.ca(width=500,height=500)
+canvas.config(bg='green')
+# canvas.rectangle([[-50,-50],[50,50]],fill='blue',outline='orange',width=100)
+# canvas.oval([[0,0],[200,100]],fill='yellow',outline='red',width=5)
+button = g.bu(text="let's try", command=make_circle)
+# canvas.line([[0,0],[30,30],[100,50],[0,0]],fill='green',width=3)
+# canvas.polygon([[-10,-10],[100,100],[120,80]],fill='red',width=3)
+#item = canvas.circle([0,0],100,fill='red')
+#item.config(fill='blue',outline='orange',width=10)
+entry = g.en(text='input color name')
+text = g.te(width=100,height=5)
+button2 = g.bu(text='change the color of circle',command=change_color)
 g.mainloop()
-
-g.bu(text="let's try")
-
-# def make_label():
-#     g.la(text='Thank you')
-#
-# button2 = g.bu(text="let's try2",command = make_label)
-
-g.mainloop()
-          
