@@ -20,10 +20,10 @@ def vector_subs(v,w):
     return [vi-wi for vi,wi in zip(v,w)]
 
 def vector_add(v,w):
-    return [vi-wi for vi,wi in zip(v,w)]
+    return [vi+wi for vi,wi in zip(v,w)]
 
 def vector_mean(vectors):
-    sumv = []
+    sumv = [0 for i in range(len(vectors[0]))]
     for vector in vectors:
         sumv = vector_add(sumv,vector)
     l=len(vectors)
@@ -57,7 +57,6 @@ if __name__ == '__main__':
     path = '/home/boxiao/1.jpg'
     img = mpimg.imread(path)
     pixs = [pix for row in img for pix in row]
-
     cluster = KMeans(5)
     cluster.train(pixs)
     print cluster.means
@@ -66,13 +65,13 @@ if __name__ == '__main__':
         cluster1 = cluster.classify(pixel)
         return cluster.means[cluster1]
 
-#    new_img = [[recolor(pix) for pix in row] for row in img]
+    new_img = [[recolor(pix) for pix in row] for row in img]
     print 'start to show pic'
 
 #    with open('t.txt','w') as f:
  #       for i in new_img:
   #          f.write(str(i)+'\n')
 
-    plt.imshow(img)
+    plt.imshow(new_img)
     plt.axis('off')
     plt.show()
