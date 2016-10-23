@@ -1,6 +1,6 @@
 import json
 import urllib2
-from swampy.Lumpy import Lumpy
+# from swampy.Lumpy import Lumpy
 
 # lumpy=Lumpy()
 # lumpy.make_reference()
