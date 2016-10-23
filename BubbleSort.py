@@ -16,6 +16,5 @@ def bubblesort(li):
                 li[i],li[i+1]=li[i+1],li[i]
                 flag = 0
     return li
-    
+
 print bubblesort([11,10,8,7,6,5,4,3,2,1])
-            
