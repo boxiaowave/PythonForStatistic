@@ -1,0 +1,89 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Authors	arxiv.py	/^                ','.join([authors.string for authors in tag.find_all('a')])$/;"	v
+InsertSort	InsertSort.py	/^def InsertSort(li):$/;"	f
+KMeans	k-means.py	/^class KMeans(object):$/;"	c
+__init__	k-means.py	/^    def __init__(self,k):$/;"	m	class:KMeans
+a	arxiv.py	/^a = BeautifulSoup(f, 'lxml')$/;"	v
+abdo	arxiv.py	/^abdo = a.find_all('a', title='Abstract')$/;"	v
+authorli	arxiv.py	/^authorli = []$/;"	v
+authorsname	arxiv.py	/^authorsname = ''$/;"	v
+bisect	try.py	/^def bisect(sl,n):$/;"	f
+bubblesort	BubbleSort.py	/^def bubblesort(li):$/;"	f
+button	mdtry.py	/^button = g.bu(text="let's try", command=make_circle)$/;"	v
+button2	mdtry.py	/^button2 = g.bu(text='change the color of circle',command=change_color)$/;"	v
+canvas	mdtry.py	/^canvas = g.ca(width=500,height=500)$/;"	v
+change_color	mdtry.py	/^def change_color():$/;"	f
+chose_from_hist	try.py	/^def chose_from_hist(s):$/;"	f
+classify	k-means.py	/^    def classify(self,input):$/;"	m	class:KMeans
+cluster	k-means.py	/^    cluster = KMeans(5)$/;"	v	class:KMeans
+create_sum	try.py	/^def create_sum(t):$/;"	f
+ddir	download.py	/^ddir='.\/machinelearning\/'$/;"	v
+dot	k-means.py	/^def dot(v,w):$/;"	f
+download_file	arxiv.py	/^def download_file(i):$/;"	f
+entry	mdtry.py	/^entry = g.en(text='input color name')$/;"	v
+f	arxiv.py	/^f = urllib.urlopen('http:\/\/arxiv.org\/list\/cond-mat.quant-gas\/recent')$/;"	v
+f	download.py	/^f=urllib2.urlopen(html)$/;"	v
+f	try.py	/^    f=[]$/;"	v
+file	CSVwriter.py	/^file = open('.\/test.csv','wb+')$/;"	v
+g	mdtry.py	/^g = Gui()$/;"	v
+get_country	Jsondata.py	/^def get_country(ip):$/;"	f
+hist1	try.py	/^        hist1 = process_file(file)$/;"	v
+hist2	try.py	/^        hist2 = process_file(file,False)$/;"	v
+histogram	try.py	/^def histogram(s):$/;"	f
+homep	arxiv.py	/^homep = 'http:\/\/arxiv.org'$/;"	v
+html	download.py	/^html='http:\/\/www.tingvoa.com\/html\/20130204\/1404.html'$/;"	v
+i	arxiv.py	/^i = 0$/;"	v
+img	k-means.py	/^    img = mpimg.imread(path)$/;"	v	class:KMeans
+input_nu	arxiv.py	/^def input_nu():$/;"	f
+keys	try.py	/^    keys=[]$/;"	v
+l1	MergeSort.py	/^l1 = selectionsort([2,8,3,2,6])$/;"	v
+l2	MergeSort.py	/^l2 = selectionsort([1,9,3,1,34,0])$/;"	v
+li	InsertSort.py	/^li = [12,11,13,9,7,4,2,1]$/;"	v
+li	SelectionSort.py	/^    li = [12,11,10,9,7,4,2,1]$/;"	v
+loop	Mutiprocess.py	/^def loop(s):$/;"	f
+make_button	mdtry.py	/^def make_button():$/;"	f
+make_circle	mdtry.py	/^def make_circle():$/;"	f
+make_label	mdtry.py	/^def make_label():$/;"	f
+mean	k-means.py	/^def mean(t):$/;"	f
+mergesort	MergeSort.py	/^def mergesort(l1,l2):$/;"	f
+new_img	k-means.py	/^    new_img = [[recolor(pix) for pix in row] for row in img]$/;"	v	class:KMeans
+next_step	arxiv.py	/^def next_step():$/;"	f
+path	k-means.py	/^    path = '\/home\/boxiao\/1.jpg'$/;"	v	class:KMeans
+pixs	k-means.py	/^    pixs = [pix for row in img for pix in row]$/;"	v	class:KMeans
+print_most_common	try.py	/^def print_most_common(hist,n=10):$/;"	f
+process_file	try.py	/^def process_file(f,delete=True):$/;"	f
+process_line	try.py	/^def process_line(line,hist):$/;"	f
+r	try.py	/^    r=[]$/;"	v
+recolor	k-means.py	/^    def recolor(pixel):$/;"	m	class:KMeans
+s	arxiv.py	/^s = a.find_all(['dd', 'h3'])$/;"	v
+s	download.py	/^s=BeautifulSoup(f,'lxml')$/;"	v
+selectionsort	SelectionSort.py	/^def selectionsort(li):$/;"	f
+show_abstract	arxiv.py	/^def show_abstract(i):$/;"	f
+show_authors	arxiv.py	/^def show_authors(i):$/;"	f
+show_paperlist	arxiv.py	/^def show_paperlist():$/;"	f
+show_paperlistlat	arxiv.py	/^def show_paperlistlat():$/;"	f
+squared_distance	k-means.py	/^def squared_distance(v,w):$/;"	f
+substract1	try.py	/^def substract1(d1,d2):$/;"	f
+substract2	try.py	/^def substract2(d1,d2):$/;"	f
+sumlist	try.py	/^    sumlist=create_sum(values)$/;"	v
+sumofsquares	k-means.py	/^def sumofsquares(v):$/;"	f
+t	download.py	/^t=s.find('div',id='download')$/;"	v
+t	try.py	/^    t=[]$/;"	v
+text	mdtry.py	/^text = g.te(width=100,height=5)$/;"	v
+tidic	arxiv.py	/^tidic = dict()$/;"	v
+tili	arxiv.py	/^tili = []$/;"	v
+tili2	arxiv.py	/^tili2 = []$/;"	v
+time	arxiv.py	/^        time = dot.string.encode('utf - 8')$/;"	v
+title	arxiv.py	/^            title = ' '.join($/;"	v
+train	k-means.py	/^    def train(self,inputs):$/;"	m	class:KMeans
+urls	download.py	/^urls=t.find_all('a')$/;"	v
+values	try.py	/^    values=[]$/;"	v
+vector_add	k-means.py	/^def vector_add(v,w):$/;"	f
+vector_mean	k-means.py	/^def vector_mean(vectors):$/;"	f
+vector_subs	k-means.py	/^def vector_subs(v,w):$/;"	f
+writer	CSVwriter.py	/^writer = csv.writer(file)$/;"	v

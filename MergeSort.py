@@ -6,22 +6,21 @@ Created on Fri Aug 12 21:54:23 2016
 """
 import SelectionSort
 
-def mergesort(l1,l2):
+def mergesort(l1, l2):
     li = []
-    i,j = 0,0
-    while i<len(l1) and j<len(l2):
-        if l1[i]<l2[j]:
+    i, j = 0, 0
+    while i < len(l1) and j < len(l2):
+        if l1[i] < l2[j]:
             li.append(l1[i])
-            i+=1
+            i += 1
         else:
             li.append(l2[j])
-            j+=1
+            j += 1
     li += l1[i:]
     li += l2[j:]
     return li
-             
-l1 = selectionsort([2,8,3,2,6])
-l2 = selectionsort([1,9,3,1,34,0])
 
-print mergesort(l1,l2)
-        
+l1 = SelectionSort.selectionsort([2, 8, 3, 2, 6])
+l2 = SelectionSort.selectionsort([1, 9, 3, 1, 34, 0])
+
+print mergesort(l1, l2)

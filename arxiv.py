@@ -111,7 +111,6 @@ def download_file(i):
                        '/' + ' '.join(tili2[i - 1].split()[1:7]) + '.pdf')
     print 'done.:-D'
 
-
 # print tili
 def next_step():
     print '\nWhat do you want me to do next?'
