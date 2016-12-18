@@ -12,7 +12,6 @@ import re
 import os
 
 
-
 homep = 'http://arxiv.org'
 
 
@@ -26,42 +25,44 @@ file = open('page.txt','r')
 a = BeautifulSoup(file.read(),'lxml')
 '''
 
-a = BeautifulSoup(f,'lxml')
+a = BeautifulSoup(f, 'lxml')
 
 
 tili = []
 tili2 = []
-authorli=[]
+authorli = []
 tidic = dict()
 
-s = a.find_all(['dd','h3'])
+s = a.find_all(['dd', 'h3'])
 authorsname = ''
-i=0
-abdo = a.find_all('a',title = 'Abstract')
+i = 0
+abdo = a.find_all('a', title='Abstract')
 
 for dot in s:
     if dot.name == 'dd':
         for tag in dot.find_all('div', class_='list-title mathjax'):
-            title = ' '.join((tag.span.string+tag.span.next_sibling.string).encode('utf-8').split())
+            title = ' '.join(
+                (tag.span.string+tag.span.next_sibling.string).encode('utf-8').split())
         for tag in dot.find_all('div', class_='list-authors'):
-            Authors ='Authors: '+','.join([authors.string for authors in tag.find_all('a')])
+            Authors = 'Authors: ' + \
+                ','.join([authors.string for authors in tag.find_all('a')])
         tili.append(title)
         tili2.append(title)
         authorli.append(Authors)
-        tidic[title]=[i+1,time,Authors]
-        i+=1
+        tidic[title] = [i+1, time, Authors]
+        i += 1
     else:
         time = dot.string.encode('utf - 8')
-        tili.append('Date:'+ time)
-
+        tili.append('Date:' + time)
 
 
 def input_nu():
     while True:
         try:
             while True:
-                numbers=int(raw_input('\nwhich paper?[Input the number,input 0 to abort]'))
-                if 0<=numbers<len(tidic):
+                numbers = int(
+                    raw_input('\nwhich paper?[Input the number,input 0 to abort]'))
+                if 0 <= numbers < len(tidic):
                     return numbers
                     break
                 else:
@@ -74,25 +75,29 @@ def input_nu():
 def show_paperlist():
     for value in tili:
         if value.startswith('Date'):
-            print '\n',value,'\n'
+            print '\n', value, '\n'
         else:
-            print '\n',tidic[value][0],'.',value
+            print '\n', tidic[value][0], '.', value
             print tidic[value][2]
 
+
 def show_paperlistlat():
-    print '\n',tili[0]
+    print '\n', tili[0]
     for value in tili2:
         if tidic[value][1] in tili[0]:
             print '\n', tidic[value][0], '.', value
             print tidic[value][2]
 
+
 def show_authors(i):
-    print '\n', tili2[i - 1],'\n',authorli[i-1]
+    print '\n', tili2[i - 1], '\n', authorli[i-1]
+
 
 def show_abstract(i):
     abst = urllib.urlopen(homep + abdo[i - 1]['href'])
     absoup = BeautifulSoup(abst, 'lxml')
     print '\n', tili2[i - 1], '\nAbstract:', absoup.blockquote.contents[2].lstrip()
+
 
 def download_file(i):
     abst = urllib.urlopen(homep + abdo[i - 1]['href'])
@@ -102,14 +107,15 @@ def download_file(i):
     paperdir = './arxivpapers/' + tidic[tili2[i - 1]][1][:16]
     if not os.path.exists(paperdir):
         os.makedirs(paperdir)
-    urllib.urlretrieve(homep + download_url, paperdir + '/' + ' '.join(tili2[i - 1].split()[1:7]) + '.pdf')
+    urllib.urlretrieve(homep + download_url, paperdir +
+                       '/' + ' '.join(tili2[i - 1].split()[1:7]) + '.pdf')
     print 'done.:-D'
 
 
-#print tili
+# print tili
 def next_step():
     print '\nWhat do you want me to do next?'
-    print  u'[0]给朕退下。'
+    print u'[0]给朕退下。'
     print '[1]Show the abstract.'
     print '[2]Show the author of the paper.'
     print '[3]Download the pdf file.'
@@ -124,9 +130,9 @@ def next_step():
     elif term == 5:
         show_paperlistlat()
         next_step()
-    elif term in range(0,4):
+    elif term in range(0, 4):
         papernumber = input_nu()
-        if papernumber==0:
+        if papernumber == 0:
             next_step()
         elif term == 1:
             show_abstract(papernumber)
@@ -148,11 +154,3 @@ def next_step():
 show_paperlist()
 print '\n~~~Welcome to ArXiv paper scraping program~~~~'
 next_step()
-
-
-
-
-
-
-
-

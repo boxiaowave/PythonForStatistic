@@ -14,3 +14,4 @@ def get_country(ip):
 print get_country('210.45.121.4')
 
 #lumpy.object_diagram()
+
